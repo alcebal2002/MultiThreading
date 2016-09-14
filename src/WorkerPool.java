@@ -4,14 +4,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory; 
 import java.util.concurrent.TimeUnit; 
 
-public class WorkerPool { 
+public class WorkerPool {
 
 	// Default parameter values 
-	private static int poolCoreSize = 5; 
+	private static int poolCoreSize = 5;
 	private static int poolMaxSize = 10; 
 	private static int queueCapacity = 50; 
 	private static int timeoutSecs = 50; 
-	private static int taskNumber = 100; 
+	private static int taskNumber = 100;  
 	private static int processTime = 5000; 
 	private static int retrySleepTime = 5000; 
 	private static int retryMaxAttempts = 5; 
@@ -79,7 +79,7 @@ public class WorkerPool {
 		System.out.println(new Timestamp((new java.util.Date()).getTime()) + " - Shutting down monitor thread..."); 
 		monitor.shutdown(); 
 		System.out.println(new Timestamp((new java.util.Date()).getTime()) + " - Shutting down monitor thread... done"); 
-		stopTime = System.currentTimeMillis(); 
+		stopTime = System.currentTimeMillis();
 
 		printParameters ("Finished");
 		System.out.println ("Results:"); 
