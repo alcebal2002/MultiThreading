@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class WorkerPool { 
 
-	// Default values 
+	// Default parameter values 
 	private static int poolCoreSize = 5; 
 	private static int poolMaxSize = 10; 
 	private static int queueCapacity = 50; 
