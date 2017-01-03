@@ -100,6 +100,7 @@ public class WorkerPool {
 		System.out.println ("**************************************************"); 
 		System.out.println ("  - Min elapsed execution time: " + executorPool.getMinExecutionTime() + " ms"); 
 		System.out.println ("  - Max elapsed execution time: " + executorPool.getMaxExecutionTime() + " ms"); 
+		System.out.println ("  - Avg elapsed execution time: " + (executorPool.getMaxExecutionTime() + executorPool.getMinExecutionTime())/2 + " ms");
 		System.out.println ("**************************************************"); 
 			
 	}

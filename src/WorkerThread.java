@@ -41,7 +41,7 @@ public class WorkerThread implements Runnable {
 				Document doc = Jsoup.connect(url).get();
 		        Elements links = doc.select("a[href]"); 
 	    		System.out.println (" * Found " + links.size() + " links in " + url);
-*/				
+*/
 				long counter = 0; 
 
 				long startTime = System.currentTimeMillis(); 
@@ -52,7 +52,8 @@ public class WorkerThread implements Runnable {
 							counter=0; 
 					} 
 				} 
-			} catch (Exception e) { 
+
+				} catch (Exception e) { 
 					e.printStackTrace(); 
 			} 
 	} 
