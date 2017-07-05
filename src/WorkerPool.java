@@ -23,31 +23,31 @@ public class WorkerPool {
 
 	public static void main(String args[]) throws InterruptedException { 
 
-		if (args != null && args.length == 10) { 
-				poolCoreSize = Integer.parseInt(args[0]); 
-				poolMaxSize = Integer.parseInt(args[1]); 
-				queueCapacity = Integer.parseInt(args[2]); 
-				timeoutSecs = Integer.parseInt(args[3]); 
-				taskNumber = Integer.parseInt(args[4]); 
-				processTime = Integer.parseInt(args[5]); 
-				retrySleepTime = Integer.parseInt(args[6]); 
-				retryMaxAttempts = Integer.parseInt(args[7]); 
-				initialSleep = Integer.parseInt(args[8]); 
-				monitorSleep = Integer.parseInt(args[9]); 
-		} else { 
-				System.out.println ("Not all parameters informed. Using default values"); 
-				System.out.println (""); 
-				System.out.println ("Usage: java WorkerPool <pool core size> <pool max size> <queue capacity> <timeout (secs)> <number of tasks> <task process (ms)> <retry sleep (ms)> <retry max attempts> <initial sleep (secs)> <monitor sleep (secs)>"); 
-				System.out.println ("  Example: java WorkerPool 10 15 20 50 500 5000 5000 5 5 3"); 
-				System.out.println (""); 
-		} 
+		if (args != null && args.length == 10) {
+			poolCoreSize = Integer.parseInt(args[0]);
+			poolMaxSize = Integer.parseInt(args[1]);
+			queueCapacity = Integer.parseInt(args[2]);
+			timeoutSecs = Integer.parseInt(args[3]);
+			taskNumber = Integer.parseInt(args[4]);
+			processTime = Integer.parseInt(args[5]);
+			retrySleepTime = Integer.parseInt(args[6]);
+			retryMaxAttempts = Integer.parseInt(args[7]);
+			initialSleep = Integer.parseInt(args[8]);
+			monitorSleep = Integer.parseInt(args[9]);
+		} else {
+			System.out.println ("Not all parameters informed. Using default values");
+			System.out.println ("");
+			System.out.println ("Usage: java WorkerPool <pool core size> <pool max size> <queue capacity> <timeout (secs)> <number of tasks> <task process (ms)> <retry sleep (ms)> <retry max attempts> <initial sleep (secs)> <monitor sleep (secs)>");
+			System.out.println ("  Example: java WorkerPool 10 15 20 50 500 5000 5000 5 5 3");
+			System.out.println ("");
+		}
 
 		System.out.println (new Timestamp((new java.util.Date()).getTime()) + " - Waiting " + initialSleep + " secs to start..."); 
 		Thread.sleep(initialSleep*1000); 
 
 		printParameters ("Started");
 
-		startTime = System.currentTimeMillis(); 
+		startTime = System.currentTimeMillis();
 
 		//RejectedExecutionHandler implementation 
 		RejectedExecutionHandlerImpl rejectionHandler = new RejectedExecutionHandlerImpl(); 
